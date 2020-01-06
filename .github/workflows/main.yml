@@ -47,7 +47,7 @@ jobs:
         with:
           args: |
             **${{ github.repository }}**: Something went wrong while deploying
-            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
       - name: Notify on Discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
@@ -55,4 +55,4 @@ jobs:
         with:
           args: |
             **${{ github.repository }}** has been deployed successfully
-            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
