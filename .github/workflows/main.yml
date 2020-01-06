@@ -1,0 +1,33 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+        run: |
+          if [ ! -e mbc-rando ]; then
+            mkdir -p mbc-rando
+            cd mbc-rando
+            git init
+            git remote add origin ${{ github.repositoryUrl }}
+          fi
+
+          git fetch --depth=1 origin ${{ github.sha }}
+          git checkout FETCH_HEAD
+          git gc
+          git prune
+
+          cd ..
+          docker-compose build
+          docker-compose up -d
