@@ -1,0 +1,57 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        env:
+          SERVICE: mbc-rando
+        with:
+          username: dockerman
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: SERVICE
+          script: |
+            cd ~
+
+            if [ -e $SERVICE ]; then
+              cd $SERVICE
+            else
+              mkdir -p $SERVICE
+              cd $SERVICE
+              git init
+              git remote add origin ${{ github.event.repository.clone_url }}
+            fi
+
+            git fetch --depth=1 origin ${{ github.ref }}
+            git checkout FETCH_HEAD
+            git gc
+            git prune
+
+            cd ..
+            docker-compose build $SERVICE
+            docker-compose up -d $SERVICE
+      - name: Notify on Discord (Failure)
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            🚨 **Something went wrong while deploying** 🚨
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
+      - name: Notify on Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            Deployed successfully
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
