@@ -11,19 +11,22 @@ jobs:
       - uses: actions/checkout@v1
       - name: Deploy
         uses: appleboy/ssh-action@master
+        env:
+          SERVICE: mbc-rando
         with:
           username: dockerman
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
+          envs: SERVICE
           script: |
             cd ~
 
-            if [ -e mbc-rando ]; then
-              cd mbc-rando
+            if [ -e $SERVICE ]; then
+              cd $SERVICE
             else
-              mkdir -p mbc-rando
-              cd mbc-rando
+              mkdir -p $SERVICE
+              cd $SERVICE
               git init
               git remote add origin ${{ github.event.repository.clone_url }}
             fi
@@ -34,8 +37,8 @@ jobs:
             git prune
 
             cd ..
-            docker-compose build
-            docker-compose up -d
+            docker-compose build $SERVICE
+            docker-compose up -d $SERVICE
       - name: Notify on Discord
         if: always()
         env:
