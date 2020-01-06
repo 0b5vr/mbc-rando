@@ -46,7 +46,7 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: |
-            Something went wrong while deploying
+            🚨 **Something went wrong while deploying** 🚨
             <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
       - name: Notify on Discord
         env:
