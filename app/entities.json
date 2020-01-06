@@ -1,0 +1,702 @@
+{
+  "serieses": [
+    {
+      "name": "Mods Boot Camp",
+      "packs": [
+        "Mods Boot Camp",
+        "Mods Boot Camp 2",
+        "Mods Boot Camp 3"
+      ],
+      "aliases": [ "MBC" ]
+    }
+  ],
+
+  "packs": [
+    {
+      "name": "Mods Boot Camp",
+      "aliases": [ "MBC", "MBC1", "Mods Boot Camp 1" ]
+    },
+    {
+      "name": "Mods Boot Camp 2",
+      "aliases": [ "MBC2" ]
+    },
+    {
+      "name": "Mods Boot Camp 3",
+      "aliases": [ "MBC3", "RIP11 Mods", "RIP11 Mods SRT" ]
+    }
+  ],
+
+  "songs": [
+    {
+      "name": "ΑΩ",
+      "artist": "BlackY",
+      "author": "WinDEU",
+      "tier": 4,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "Alpha Omega", "AlphaOmega" ]
+    },
+    {
+      "name": "A Moon of Caral (Verdammt Remix)",
+      "artist": "Verdammt",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "AYAKASHI",
+      "artist": "Hommarju",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Backflow",
+      "artist": "lapix",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Blacksphere",
+      "artist": "s-don as Iriss",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Blastix Riotz",
+      "artist": "Camellia as \"Bang Riot\"",
+      "author": "WinDEU",
+      "tier": 4,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "bloom",
+      "artist": "Gowrock",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Catadioptric",
+      "artist": "Jerico",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Common World Domination",
+      "artist": "PinocchioP",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "ありふれたせかいせいふく" ]
+    },
+    {
+      "name": "DEADLOCK XXX",
+      "artist": "BlackY",
+      "author": "WinDEU",
+      "tier": 4,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "Deadlock" ]
+    },
+    {
+      "name": "Discloze",
+      "artist": "lapix",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "disco KAWAii",
+      "artist": "uno feat. Chiyoko (IOSYS)",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "dream control",
+      "artist": "C-YA",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "ECHO",
+      "artist": "CIRCRUSH",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Firestorm",
+      "artist": "ETIA.",
+      "author": "WinDEU",
+      "tier": 4,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Fly to Next World (syzfonics remix)",
+      "artist": "syzfonics",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "INF-B <<L-aste-R>>",
+      "artist": "Kaneko Chiharu",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "Inf Blaster", "InfBlaster", "Inf-Blaster" ]
+    },
+    {
+      "name": "M.A.Y.U.",
+      "artist": "Ryu☆ feat. MAYU",
+      "author": "WinDEU",
+      "tier": 1,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "mayu" ]
+    },
+    {
+      "name": "Opium and Purple Haze",
+      "artist": "D.watt (OTAKU-ELITE Recordings)",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Pet Peeve",
+      "artist": "Hirayasu Matsudo",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Pieces of a Dream",
+      "artist": "uma vs. Atsushi Morimori",
+      "author": "WinDEU",
+      "tier": 4,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "Pieces" ]
+    },
+    {
+      "name": "Profession",
+      "artist": "syzfonics",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp",
+      "aliases": [ "🅱️rofession" ]
+    },
+    {
+      "name": "Rubeus",
+      "artist": "RedMuffleR",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Twin Rocket",
+      "artist": "uno feat. Chiyoko (IOSYS)",
+      "author": "WinDEU",
+      "tier": 2,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Warriors Aboot",
+      "artist": "RoughSketch vs MAD CHILD",
+      "author": "WinDEU",
+      "tier": 3,
+      "pack": "Mods Boot Camp"
+    },
+    {
+      "name": "Brain Power",
+      "artist": "NOMA",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "CENSORED!!",
+      "artist": "t+pazolite",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "CENSORED" ]
+    },
+    {
+      "name": "continew",
+      "artist": "Verdammt",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Crack Traxxxx",
+      "artist": "Lite Show Magic (t+pazolite vs C-Show)",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Crimson Sword Dance",
+      "artist": "Kaneko Chiharu",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Dawn of Asia",
+      "artist": "ginkiha+kamome sano",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Double Universe",
+      "artist": "Hommarju vs P*Light",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "good high school",
+      "artist": "baker",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Grip & Break down!! -SDVX Edit.-",
+      "artist": "SOUND HOLIC feat. Nana Takahashi",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "INFINITY OVERDRIVE",
+      "artist": "DecisionS (kanone + nora2r)",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Issen",
+      "artist": "tanso a.k.a. Moriya Masato",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Jump!",
+      "artist": "Syrufit feat. Mei Ayakura/Tsubaki Ichimatsu",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "KAC 2012 Ultimate Medley Extend -HISTORIA SOUND VOLTEX-",
+      "artist": "FLOOR LEGENDS -KAC 2012-",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "KAC Medley" ]
+    },
+    {
+      "name": "Mirai Prism",
+      "artist": "Coconuts",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "ミライプリズム" ]
+    },
+    {
+      "name": "Neko Kuma Usasaa",
+      "artist": "Yuuma Mizonokuchi feat. Miko♡Nachi♡Ai",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "ネコクマウササー" ]
+    },
+    {
+      "name": "ON FIRE",
+      "artist": "Yuuki Nishijima",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Ops Code -Rapture-",
+      "artist": "Getty vs. DJ DiA",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Preserved Valkyria",
+      "artist": "penoreri",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "プリキュア" ]
+    },
+    {
+      "name": "Rampage",
+      "artist": "cosMo@BousouP",
+      "author": "CondorTalon",
+      "tier": 3,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "暴走" ]
+    },
+    {
+      "name": "Rings of Rainbow",
+      "artist": "Hommarju",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Sayonara Planet Wars",
+      "artist": "Chroma",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "SPW" ]
+    },
+    {
+      "name": "Shiawase Transmission",
+      "artist": "you",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "shiningray",
+      "artist": "164 feat. GUMI",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "There's Supposed To Be A Cheat Code For Happiness",
+      "artist": "UtataP feat. Yuzuki Yukari",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2",
+      "aliases": [ "Cheat Code", "隠しコマンド", "幸せになれる隠しコマンドがあるらしい" ]
+    },
+    {
+      "name": "Virtual Sunrise (xac remix)",
+      "artist": "xac",
+      "author": "CondorTalon",
+      "tier": 1,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "WAVE WAVE WAVE",
+      "artist": "ZYTOKINE feat. itori",
+      "author": "CondorTalon",
+      "tier": 2,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "XROSS INFECTION",
+      "artist": "BlackY vs. Yooh",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "XyHATTE",
+      "artist": "cosMo@BousouUltimate",
+      "author": "CondorTalon",
+      "tier": 4,
+      "pack": "Mods Boot Camp 2"
+    },
+    {
+      "name": "Ayakashi Kakushi",
+      "artist": "DJ TOTTO feat. 3L",
+      "author": "TaroNuke",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "妖隠し -あやかしかくし-", "妖隠し" ]
+    },
+    {
+      "name": "C18H27NO3",
+      "artist": "Team Grimoire",
+      "author": "Daikyi",
+      "tier": 3,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "capsaicin", "カプサイシン" ]
+    },
+    {
+      "name": "citrus",
+      "artist": "kamome sano",
+      "author": "Daikyi",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Dadadadadadadadadada",
+      "artist": "Hige Driver Join. SELEN",
+      "author": "Daikyi",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "打打打打打打打打打打" ]
+    },
+    {
+      "name": "Deadball de Homerun",
+      "artist": "Nekomata Master Beta2",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "デッドボヲルdeホームラン" ]
+    },
+    {
+      "name": "Destroy",
+      "artist": "Yooh",
+      "author": "halcyoniix",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "dreamin' of u",
+      "artist": "Jun Kuroda",
+      "author": "Daikyi",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Dyscontrolled Galaxy",
+      "artist": "Camellia",
+      "author": "TaroNuke",
+      "tier": 4,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Goodbye-bye Planet",
+      "artist": "Chroma",
+      "author": "TaroNuke",
+      "authors": [ "Daikyi", "halcyoniix", "TaroNuke" ],
+      "tier": 1,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "GorgeTech",
+      "artist": "Shiron",
+      "author": "TaroNuke",
+      "tier": 3,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Gorge", "George" ]
+    },
+    {
+      "name": "Hana no motorenga",
+      "artist": "Jan*Key",
+      "author": "Daikyi",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "HP:1",
+      "artist": "Verdammt",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "HP1" ]
+    },
+    {
+      "name": "HYMN",
+      "artist": "Zutt",
+      "author": "TaroNuke",
+      "tier": 4,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "НУМЛ" ]
+    },
+    {
+      "name": "JUGGLE",
+      "artist": "Ras",
+      "author": "TaroNuke",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Junk Mania",
+      "artist": "Udouddo&Valleystone",
+      "author": "halcyoniix",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Kanashibari no ai wo",
+      "artist": "Harunaba",
+      "author": "TaroNuke",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "金縛りの逢を" ]
+    },
+    {
+      "name": "Koi hadou? Moro@Hadou OK*Houteishiki!",
+      "artist": "ave-new project feat.Sakura Saori produced by ave-new",
+      "author": "TaroNuke",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "恋はどう？モロ◎波動OK☆方程式!!", "Koihadou", "恋波動" ]
+    },
+    {
+      "name": "Kusare gedou to chocolate",
+      "artist": "PinocchioP feat. Soraru",
+      "author": "TaroNuke",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "腐れ外道", "腐れ外道とチョコレゐト" ]
+    },
+    {
+      "name": "Le Fruit Defendu",
+      "artist": "Morimori Atsushi + Verdammt",
+      "author": "Daikyi",
+      "tier": 4,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "LFD" ]
+    },
+    {
+      "name": "Mother Ship (C-YA MIX)",
+      "artist": "C-YA",
+      "author": "TaroNuke",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "母艦" ]
+    },
+    {
+      "name": "Night of Knights",
+      "artist": "beatMARIO",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Knight of Nights", "ナイト・オブ・ナイツ", "ナイトオブナイツ" ]
+    },
+    {
+      "name": "Nishinippori no Odori",
+      "artist": "You Takahashi feat. VY2",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "西日暮里の踊り", "西日暮里", "Nishinippori" ]
+    },
+    {
+      "name": "Nyan Cat",
+      "artist": "daniwellP feat. Momone Momo",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Nyanyanyanyanyanyanya!" ]
+    },
+    {
+      "name": "Planeta Journey",
+      "artist": "U-ske feat. Itsuki Natsume",
+      "author": "halcyoniix",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "プラネタジャーニー" ]
+    },
+    {
+      "name": "Raiko Thunder Beat",
+      "artist": "ARM(IOSYS) feat. COOL&CREATE",
+      "author": "TaroNuke",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "雷鼓サンダービート" ]
+    },
+    {
+      "name": "Random Box",
+      "artist": "LATI",
+      "author": "TaroNuke",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Sailing Force",
+      "artist": "Penoreri",
+      "author": "Daikyi",
+      "tier": 3,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Super*Super*Light*Speed*Delivery!!!Speed*Star*Kanade",
+      "artist": "Camellia feat. Nanahira",
+      "author": "TaroNuke vs. Daikyi",
+      "authors": [ "Daikyi", "TaroNuke" ],
+      "tier": 4,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Speed Star Kanade", "SSK", "スピードスターかなで", "超☆超☆高☆速☆出☆前☆最☆速!!! スピード☆スター☆かなで" ],
+      "isMeme": true
+    },
+    {
+      "name": "TRIGGER*HAPPY",
+      "artist": "P*Light",
+      "author": "TaroNuke",
+      "tier": 2,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "usatei",
+      "artist": "Amane + BeatMario(COOL&CREATE)",
+      "author": "Daikyi vs. TaroNuke",
+      "authors": [ "Daikyi", "TaroNuke" ],
+      "tier": 2,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "ウサテイ" ]
+    },
+    {
+      "name": "Vigor",
+      "artist": "Yooh",
+      "author": "halcyoniix",
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Voltex taisou daiichi",
+      "artist": "Kaoru feat.FG75",
+      "author": "Daikyi",
+      "tier": 3,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "ボルテ体操第一" ]
+    },
+    {
+      "name": "We Are The Scarlet",
+      "artist": "Amane (Rolling Contact)",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "#FairyJoke #SDVX_Edit",
+      "artist": "uno(IOSYS)",
+      "author": "TaroNuke vs. Daikyi",
+      "authors": [ "Daikyi", "TaroNuke" ],
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "FairyJoke" ]
+    }
+  ],
+
+  "authors": [
+    {
+      "name": "WinDEU",
+      "aliases": [ "Nick", "LoseDont", "LostDon't" ]
+    },
+    {
+      "name": "CondorTalon"
+    },
+    {
+      "name": "TaroNuke",
+      "aliases": [ "Taro", "taro4012", "Alan James", "Alan" ]
+    },
+    {
+      "name": "Daikyi"
+    },
+    {
+      "name": "halcyoniix",
+      "aliases": [ "Hal" ]
+    }
+  ]
+}

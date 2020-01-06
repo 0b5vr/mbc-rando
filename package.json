@@ -1,0 +1,13 @@
+{
+  "name": "mbc-rando",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "docker build -t mbc-rando .",
+    "cleanbuild": "docker build --no-cache -t mbc-rando .",
+    "start": "docker run -it --env-file .env --rm mbc-rando",
+    "test": "node ./app/scripts/doublequote-test-doublequote.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0"
+  }
+}
