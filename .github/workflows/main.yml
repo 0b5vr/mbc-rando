@@ -46,7 +46,7 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: |
-            **${{ github.repository }}**: Something went wrong while deploying
+            Something went wrong while deploying
             <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
       - name: Notify on Discord
         env:
@@ -54,5 +54,5 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: |
-            **${{ github.repository }}** has been deployed successfully
+            Deployed successfully
             <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
