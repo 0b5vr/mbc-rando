@@ -147,7 +147,7 @@ try:
     } else if ( res.intent === Intent.H ) {
       return {
         file: {
-          attachment: path.resolve( __dirname, '../assets/h.mp4' ),
+          attachment: path.resolve( __dirname, '../../assets/h.mp4' ),
           name: 'h.mp4'
         }
       };
@@ -155,7 +155,7 @@ try:
     } else if ( res.intent === Intent.Jazz ) {
       return {
         file: {
-          attachment: path.resolve( __dirname, '../assets/jazz.jpg' ),
+          attachment: path.resolve( __dirname, '../../assets/jazz.jpg' ),
           name: 'jazz.jpg'
         }
       };
