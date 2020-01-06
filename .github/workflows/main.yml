@@ -36,3 +36,12 @@ jobs:
             cd ..
             docker-compose build
             docker-compose up -d
+      - name: Notify on Discord
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+          ${{ github.repository }}: ${{ failure() ? "Something went wrong while deploying" : "Deployed successfully" }}
+          https://github.com/${{ github.repository }}/commit/${{ github.sha }}
