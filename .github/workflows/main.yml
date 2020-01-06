@@ -46,5 +46,5 @@ jobs:
         uses: Ilshidur/action-discord@master
         with:
           args: |
-          ${{ github.repository }}: ${{ failure() ? "Something went wrong while deploying" : "Deployed successfully" }}
-          https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            ${{ github.repository }}: ${{ failure() ? "Something went wrong while deploying" : "Deployed successfully" }}
+            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
