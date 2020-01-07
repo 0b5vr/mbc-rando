@@ -34,6 +34,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           envs: DOCKER_IMAGE
+          command_timeout: 30m
           script: |
             docker pull $DOCKER_IMAGE
             docker-compose up -d
