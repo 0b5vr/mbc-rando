@@ -17,20 +17,10 @@ jobs:
         with:
           version: latest
 
-      - name: Login to Docker Hub
-        uses: actions-hub/docker/login@master
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-
       - name: Build the Docker Image
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_IMAGE:latest .
-
-      - name: Push to Docker Hub
-        uses: actions-hub/docker@master
-        with:
-          args: push $DOCKER_IMAGE:latest
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_IMAGE:latest --push .
 
       - name: Deploy
         uses: appleboy/ssh-action@master

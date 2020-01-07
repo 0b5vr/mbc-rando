@@ -1,4 +1,4 @@
-FROM node:13.5.0-alpine
+FROM node:lts-alpine
 
 ENV APP=/root/app
 
