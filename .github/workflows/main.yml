@@ -37,7 +37,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          envs: DOCKER_IMAGE
+          envs: DOCKER_IMAGE,COMPOSE_SERVICE
           command_timeout: 30m
           script: |
             docker pull $DOCKER_IMAGE
