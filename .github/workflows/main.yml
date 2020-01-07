@@ -3,41 +3,46 @@ on:
   push:
     branches:
       - master
+env:
+  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/mbc-rando
+  COMPOSE_SERVICE: mbc-rando
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
+      - name: Setup Docker Buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+
+      - name: Build Docker Images
+        run: |
+          docker login \
+            -u ${{ secrets.DOCKER_USERNAME }} \
+            -p ${{ secrets.DOCKER_TOKEN }}
+          docker buildx build \
+            --cache-from=${DOCKER_IMAGE}:cache \
+            --cache-to=${DOCKER_IMAGE}:cache \
+            --platform linux/amd64,linux/arm64,linux/arm/v7 \
+            -t $DOCKER_IMAGE:latest \
+            --push \
+            .
+
       - name: Deploy
         uses: appleboy/ssh-action@master
-        env:
-          SERVICE: mbc-rando
         with:
-          username: dockerman
+          username: ${{ secrets.SSH_USERNAME }}
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          envs: SERVICE
+          envs: DOCKER_IMAGE
+          command_timeout: 30m
           script: |
-            cd ~
+            docker pull $DOCKER_IMAGE
+            docker-compose up -d $COMPOSE_SERVICE
 
-            if [ -e $SERVICE ]; then
-              cd $SERVICE
-            else
-              mkdir -p $SERVICE
-              cd $SERVICE
-              git init
-              git remote add origin ${{ github.event.repository.clone_url }}
-            fi
-
-            git fetch --depth=1 origin ${{ github.ref }}
-            git checkout FETCH_HEAD
-            git gc
-            git prune
-
-            cd ..
-            docker-compose build $SERVICE
-            docker-compose up -d $SERVICE
       - name: Notify on Discord (Failure)
         if: failure()
         env:
@@ -47,6 +52,7 @@ jobs:
           args: |
             🚨 **Something went wrong while deploying** 🚨
             <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
+
       - name: Notify on Discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
