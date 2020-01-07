@@ -70,9 +70,9 @@ module.exports.MBCRando = class {
       return `I can pick a song from MBC series for you!
 try:
 \`\`\`
-@MBCRando Pick a song
-@MBCRando Pick from tier 2
-@MBCRando Pick from MBC3
+@mbc-rando Pick a song
+@mbc-rando Pick from tier 2
+@mbc-rando Pick from MBC3
 \`\`\``;
     } else if ( res.intent === Intent.ShowLastIntent ) {
       if ( this.__lastRes[ id ] ) {
