@@ -11,9 +11,55 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+
+      - name: Setup Docker Buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+
+      - name: Login to Docker Hub
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
+
       - name: Build the Docker Image
         run: |
-          docker -v
-          cd ~
-          ls
-          pwd
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_IMAGE:latest .
+
+      - name: Push to Docker Hub
+        uses: actions-hub/docker@master
+        with:
+          args: push $DOCKER_IMAGE:latest
+
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.SSH_USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: DOCKER_IMAGE
+          command_timeout: 30m
+          script: |
+            docker pull $DOCKER_IMAGE
+            docker-compose up -d
+
+      - name: Notify on Discord (Failure)
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            🚨 **Something went wrong while deploying** 🚨
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
+
+      - name: Notify on Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            Deployed successfully
+            <https://github.com/${{ github.repository }}/commit/${{ github.sha }}>
