@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - master
-      - docker-push
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/mbc-rando
+  COMPOSE_SERVICE: mbc-rando
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
           command_timeout: 30m
           script: |
             docker pull $DOCKER_IMAGE
-            docker-compose up -d
+            docker-compose up -d $COMPOSE_SERVICE
 
       - name: Notify on Discord (Failure)
         if: failure()
