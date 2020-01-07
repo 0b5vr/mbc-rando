@@ -62,6 +62,13 @@ module.exports.documents = [
   { utter: 'Pick a song by %author%', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song of %author%', intent: Intent.PickASongFromAuthor },
 
+  { utter: 'Source', intent: Intent.ShowSource },
+  { utter: 'Is your source code available somewhere?', intent: Intent.ShowSource },
+  { utter: 'Show me your source code', intent: Intent.ShowSource },
+  { utter: 'May I see your source code', intent: Intent.ShowSource },
+  { utter: 'Show me your implementation', intent: Intent.ShowSource },
+  { utter: 'May I see your implementation', intent: Intent.ShowSource },
+
   { utter: 'h', intent: Intent.H },
 
   { utter: 'jazz', intent: Intent.Jazz },

@@ -66,6 +66,7 @@ module.exports.MBCRando = class {
 
     if ( res.intent === Intent.Greetings ) {
       return 'Hi';
+
     } else if ( res.intent === Intent.Help ) {
       return `I can pick a song from MBC series for you!
 try:
@@ -74,6 +75,7 @@ try:
 @mbc-rando Pick from tier 2
 @mbc-rando Pick from MBC3
 \`\`\``;
+
     } else if ( res.intent === Intent.ShowLastIntent ) {
       if ( this.__lastRes[ id ] ) {
         return `I interpreted the last message was intended to be \`${ this.__lastRes[ id ].intent }\`.`;
@@ -143,6 +145,10 @@ try:
       const tier = res.entities.find( ( ent ) => ent.entity === 'number' ).resolution.value;
       const songs = entities.songs.filter( ( song ) => song.tier <= tier );
       return this.__pickASongFromList( songs );
+
+    } else if ( res.intent === Intent.ShowSource ) {
+      return `Here is my source code:
+https://github.com/FMS-Cat/mbc-rando`;
 
     } else if ( res.intent === Intent.H ) {
       return {

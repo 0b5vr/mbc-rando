@@ -13,6 +13,7 @@ module.exports.Intent = {
   PickASongFromPack: 'PickASongFromPack',
   PickASongFromAuthor: 'PickASongFromAuthor',
   PickASongFromPackTier: 'PickASongFromPackTier',
+  ShowSource: 'ShowSource',
   H: 'H',
   Jazz: 'Jazz'
 };
