@@ -17,7 +17,7 @@ jobs:
         with:
           version: latest
 
-      - name: Build the Docker Image
+      - name: Build Docker Images
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
           docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_IMAGE:latest --push .
