@@ -19,8 +19,16 @@ jobs:
 
       - name: Build Docker Images
         run: |
-          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $DOCKER_IMAGE:latest --push .
+          docker login \
+            -u ${{ secrets.DOCKER_USERNAME }} \
+            -p ${{ secrets.DOCKER_TOKEN }}
+          docker buildx build \
+            --cache-from=${DOCKER_IMAGE}:cache \
+            --cache-to=${DOCKER_IMAGE}:cache \
+            --platform linux/amd64,linux/arm64,linux/arm/v7 \
+            -t $DOCKER_IMAGE:latest \
+            --push \
+            .
 
       - name: Deploy
         uses: appleboy/ssh-action@master
