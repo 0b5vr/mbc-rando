@@ -8,6 +8,14 @@ const { Bot } = require( './Bot' );
   const bot = new Bot( process.env.MBCRANDO_DISCORD_TOKEN, mbcRando );
 
   process.on( 'SIGINT', () => {
+    console.info( 'Exiting...' );
+    bot.destroy().then( () => {
+      process.exit();
+    } );
+  } );
+
+  process.on( 'SIGTERM', () => {
+    console.info( 'Exiting...' );
     bot.destroy().then( () => {
       process.exit();
     } );
