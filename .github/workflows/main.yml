@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - docker-push
 env:
   DOCKER_IMAGE: fmscat/mbc-rando
 jobs:
