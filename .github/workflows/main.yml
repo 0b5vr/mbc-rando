@@ -33,6 +33,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
+          envs: DOCKER_IMAGE
           script: |
             docker pull $DOCKER_IMAGE
             docker-compose up -d
