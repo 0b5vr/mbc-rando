@@ -5,7 +5,7 @@ on:
       - master
       - docker-push
 env:
-  DOCKER_IMAGE: fmscat/mbc-rando
+  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/mbc-rando
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-          username: dockerman
+          username: ${{ secrets.SSH_USERNAME }}
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
