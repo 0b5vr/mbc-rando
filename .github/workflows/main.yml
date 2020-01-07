@@ -19,7 +19,12 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build the Docker Image
-        run: docker build -t $DOCKER_IMAGE:latest .
+        run: |
+          mkdir ~/.docker
+          echo "{\"experimental\":\"enabled\"}" > ~/.docker/config.json
+          docker buildx create --use --name mybuild node-amd64
+          docker buildx create --append --name mybuild node-arm64
+          docker buildx build --platform linux/amd64,linux/arm64 -t $DOCKER_IMAGE:latest .
 
       - name: Push to Docker Hub
         uses: actions-hub/docker@master
