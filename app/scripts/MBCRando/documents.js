@@ -32,32 +32,39 @@ module.exports.documents = [
   { utter: 'Pick a song from %series% series', intent: Intent.PickASongFromSeries },
   { utter: 'Pick a song from %series% franchise', intent: Intent.PickASongFromSeries },
 
+  { utter: 'tier %number%', intent: Intent.PickASongFromTier },
   { utter: 'Pick a song from tier %number%', intent: Intent.PickASongFromTier },
   { utter: 'Pick a tier %number% song', intent: Intent.PickASongFromTier },
 
+  { utter: 'tier %number% or above', intent: Intent.PickASongFromTierAbove },
   { utter: 'Pick a song from tier %number% or above', intent: Intent.PickASongFromTierAbove },
   { utter: 'Pick a song from tier %number% or higher', intent: Intent.PickASongFromTierAbove },
   { utter: 'Pick a song from tier %number% or larger', intent: Intent.PickASongFromTierAbove },
 
+  { utter: 'tier %number% or below', intent: Intent.PickASongFromTierBelow },
   { utter: 'Pick a song from tier %number% or below', intent: Intent.PickASongFromTierBelow },
   { utter: 'Pick a song from tier %number% or lower', intent: Intent.PickASongFromTierBelow },
   { utter: 'Pick a song from tier %number% or smaller', intent: Intent.PickASongFromTierBelow },
 
+  { utter: '%tierRange%', intent: Intent.PickASongFromTierRange },
   { utter: 'Pick a song from %tierRange%', intent: Intent.PickASongFromTierRange },
   { utter: 'Pick a song in the range of %tierRange%', intent: Intent.PickASongFromTierRange },
   { utter: 'Pick a %tierRange% song', intent: Intent.PickASongFromTierRange },
 
+  { utter: '%pack%', intent: Intent.PickASongFromPack },
   { utter: 'Pick a song from MBC', intent: Intent.PickASongFromPack }, // uhhhhhh
   { utter: 'Pick a song from %pack%', intent: Intent.PickASongFromPack },
   { utter: 'Pick a song by %pack%', intent: Intent.PickASongFromPack },
   { utter: 'Pick a song of %pack%', intent: Intent.PickASongFromPack },
 
+  { utter: '%pack% tier %number%', intent: Intent.PickASongFromPackTier },
   { utter: 'Pick a song from %pack% tier %number%', intent: Intent.PickASongFromPackTier },
   { utter: 'Pick a song of %pack% tier %number%', intent: Intent.PickASongFromPackTier },
   { utter: 'Pick a song that is %pack% tier %number%', intent: Intent.PickASongFromPackTier },
   { utter: 'Pick a tier %number% song from %pack%', intent: Intent.PickASongFromPackTier },
   { utter: 'Pick a %pack% tier %number%', intent: Intent.PickASongFromPackTier },
 
+  { utter: '%author%', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song from %author%', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song by %author%', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song of %author%', intent: Intent.PickASongFromAuthor },
