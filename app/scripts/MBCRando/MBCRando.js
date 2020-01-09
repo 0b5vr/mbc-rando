@@ -153,7 +153,11 @@ https://github.com/FMS-Cat/mbc-rando`;
     } else if ( res.intent === Intent.H ) {
       return {
         file: {
-          attachment: path.resolve( __dirname, '../../assets/h.mp4' ),
+          attachment: (
+            Math.random() < 0.00048828125
+             ? path.resolve( __dirname, '../../assets/k.mp4' )
+             : path.resolve( __dirname, '../../assets/h.mp4' )
+          ),
           name: 'h.mp4'
         }
       };
