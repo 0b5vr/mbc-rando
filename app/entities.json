@@ -445,6 +445,14 @@
       "aliases": [ "打打打打打打打打打打" ]
     },
     {
+      "name": "Dark Matter",
+      "artist": "Yooh",
+      "author": "Taro & Puuro",
+      "authors": [ "TaroNuke", "Puurokulho" ],
+      "tier": 3,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
       "name": "Deadball de Homerun",
       "artist": "Nekomata Master Beta2",
       "author": "TaroNuke",
@@ -460,6 +468,14 @@
       "pack": "Mods Boot Camp 3"
     },
     {
+      "name": "Dorpamine",
+      "artist": "U1 overground",
+      "author": "TaroNuke",
+      "tier": 3,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "ドーパミン" ]
+    },
+    {
       "name": "dreamin' of u",
       "artist": "Jun Kuroda",
       "author": "Daikyi",
@@ -469,6 +485,13 @@
     {
       "name": "Dyscontrolled Galaxy",
       "artist": "Camellia",
+      "author": "TaroNuke",
+      "tier": 4,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
+      "name": "Fafnir",
+      "artist": "Aoi Sumito a.k.a. Aoi Hito",
       "author": "TaroNuke",
       "tier": 4,
       "pack": "Mods Boot Camp 3"
@@ -488,6 +511,14 @@
       "tier": 3,
       "pack": "Mods Boot Camp 3",
       "aliases": [ "Gorge", "George" ]
+    },
+    {
+      "name": "Got More Raves?",
+      "artist": "E.G.G.",
+      "author": "TaroNuke",
+      "tier": 4,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Groove Master", "ゴモア" ]
     },
     {
       "name": "Hana no motorenga",
@@ -511,6 +542,14 @@
       "tier": 4,
       "pack": "Mods Boot Camp 3",
       "aliases": [ "НУМЛ" ]
+    },
+    {
+      "name": "iLLness LiLin",
+      "artist": "Kaneko Chiharu",
+      "author": "TaroNuke vs. Daikyi",
+      "authors": [ "Daikyi", "TaroNuke" ],
+      "tier": 4,
+      "pack": "Mods Boot Camp 3"
     },
     {
       "name": "JUGGLE",
@@ -559,6 +598,14 @@
       "aliases": [ "LFD" ]
     },
     {
+      "name": "Made In Love",
+      "artist": "Chroma",
+      "author": "Daikyi",
+      "authors": [ "Daikyi", "halcyoniix" ],
+      "tier": 2,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
       "name": "Mother Ship (C-YA MIX)",
       "artist": "C-YA",
       "author": "TaroNuke",
@@ -591,6 +638,22 @@
       "aliases": [ "Nyanyanyanyanyanyanya!" ]
     },
     {
+      "name": "Onii-chan Hi Tech",
+      "artist": "Rissyuu feat.Choko",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "おにいちゃんハイテック" ]
+    },
+    {
+      "name": "Oriental Mythology Medley",
+      "artist": "Various, mixed by TaroNuke",
+      "author": "Dai^Hal^Taro",
+      "authors": [ "Daikyi", "halcyoniix", "TaroNuke" ],
+      "tier": 4,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
       "name": "Planeta Journey",
       "artist": "U-ske feat. Itsuki Natsume",
       "author": "halcyoniix",
@@ -621,6 +684,14 @@
       "pack": "Mods Boot Camp 3"
     },
     {
+      "name": "snow motion",
+      "artist": "kohu",
+      "author": "Taro vs. Puuro",
+      "authors": [ "Puurokulho", "TaroNuke" ],
+      "tier": 1.5,
+      "pack": "Mods Boot Camp 3"
+    },
+    {
       "name": "Super*Super*Light*Speed*Delivery!!!Speed*Star*Kanade",
       "artist": "Camellia feat. Nanahira",
       "author": "TaroNuke vs. Daikyi",
@@ -629,6 +700,14 @@
       "pack": "Mods Boot Camp 3",
       "aliases": [ "Speed Star Kanade", "SSK", "スピードスターかなで", "超☆超☆高☆速☆出☆前☆最☆速!!! スピード☆スター☆かなで" ],
       "isMeme": true
+    },
+    {
+      "name": "This is the Happiness and Peace of Mind Committee.",
+      "artist": "UtataP",
+      "author": "TaroNuke",
+      "tier": 1,
+      "pack": "Mods Boot Camp 3",
+      "aliases": [ "Happiness Committee", "こちら幸福安心委員会です", "こちら、幸福安心委員会です。" ]
     },
     {
       "name": "TRIGGER*HAPPY",
@@ -693,6 +772,10 @@
     },
     {
       "name": "Daikyi"
+    },
+    {
+      "name": "Puurokulho",
+      "aliases": [ "Puuro" ]
     },
     {
       "name": "halcyoniix",
