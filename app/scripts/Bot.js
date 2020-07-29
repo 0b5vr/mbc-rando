@@ -46,7 +46,7 @@ module.exports.Bot = class {
     const mentioned = message.mentions.users.some( ( u ) => u.id === this.__client.user.id );
     if ( !mentioned ) { return; }
 
-    const str = message.content.replace( /\s*<@\d+?>\s*/m, '' );
+    const str = message.content.replace( /\s*<@!\d+?>\s*/m, '' );
     console.log( `<- ${ message.author.tag }: ${ str }` );
 
     let res;
