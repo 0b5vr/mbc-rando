@@ -13,10 +13,6 @@ ADD ./app/yarn.lock ./
 RUN npm install -g forever
 RUN yarn
 
-# == remove unnecessary and big files (WOW) ========================================================
-RUN rm -rf ${APP}/node_modules/kuromoji/test
-RUN echo -n > ${APP}/node_modules/kuromoji/dict/*
-
 # == add rest of files =============================================================================
 ADD ./app ./
 RUN chmod +x ./start.sh
