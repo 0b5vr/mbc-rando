@@ -1,43 +1,64 @@
 const path = require( 'path' );
-const { NlpManager } = require( 'node-nlp' );
+const { containerBootstrap } = require( '@nlpjs/core' );
+const { Nlp } = require( '@nlpjs/nlp' );
 const { documents } = require( './documents' );
 const { Intent } = require( './Intent' );
 const { pick } = require( '../pick' );
 const entities = require( '../../entities.json' );
 
+const regexTier = /tier\s*(\d+(.\d+)?)/;
 const regexTierRange = /tier\s*(\d+(.\d+)?)\s*(-|~|to)\s*(tier\s*)?(\d+(.\d+)?)/;
+
+function extractTierFromRegexTier( text ) {
+  const match = text.match( regexTier );
+  return parseFloat( match[ 1 ] );
+}
+
+function extractTiersFromRegexTierRange( text ) {
+  const match = text.match( regexTierRange );
+  const tierFrom = parseFloat( match[ 1 ] );
+  const tierTo = parseFloat( match[ 5 ] );
+  return [ tierFrom, tierTo ];
+}
 
 module.exports.MBCRando = class {
   constructor() {
-    this.__nlp = new NlpManager( { languages: [ 'en' ], nlu: { log: false } } );
-
     this.__lastRes = {};
   }
 
   async init() {
+    const container = await containerBootstrap();
+    container.use( Nlp );
+
+    this.__nlp = container.get( 'nlp' );
+    this.__nlp.settings.calculateSentiment = false;
+    this.__nlp.settings.autoSave = false;
+    this.__nlp.addLanguage( 'en' );
+
+    // -- entities ---------------------------------------------------------------------------------
+    entities.serieses.forEach( ( series ) => {
+      this.__nlp.addNerRule( 'en', series.name, 'series', [ series.name, ...( series.aliases || [] ) ] );
+    } );
+
+    entities.packs.forEach( ( pack ) => {
+      this.__nlp.addNerRule( 'en', pack.name, 'pack', [ pack.name, ...( pack.aliases || [] ) ] );
+    } );
+
+    entities.songs.forEach( ( song ) => {
+      this.__nlp.addNerRule( 'en', song.name, 'song', [ song.name, ...( song.aliases || [] ) ] );
+    } );
+
+    entities.authors.forEach( ( author ) => {
+      this.__nlp.addNerRule( 'en', author.name, 'author', [ author.name, ...( author.aliases || [] ) ] );
+    } );
+
+    this.__nlp.addNerRegexRule( 'en', 'tier', regexTier );
+    this.__nlp.addNerRegexRule( 'en', 'tierRange', regexTierRange );
+
     // -- documents --------------------------------------------------------------------------------
     documents.forEach( ( { utter, intent } ) => {
       this.__nlp.addDocument( 'en', utter, intent );
     } );
-
-    // -- entities ---------------------------------------------------------------------------------
-    entities.serieses.forEach( ( series ) => {
-      this.__nlp.addNamedEntityText( 'series', series.name, [ 'en' ], [ series.name, ...( series.aliases || [] ) ] );
-    } );
-
-    entities.packs.forEach( ( pack ) => {
-      this.__nlp.addNamedEntityText( 'pack', pack.name, [ 'en' ], [ pack.name, ...( pack.aliases || [] ) ] );
-    } );
-
-    entities.songs.forEach( ( song ) => {
-      this.__nlp.addNamedEntityText( 'song', song.name, [ 'en' ], [ song.name, ...( song.aliases || [] ) ] );
-    } );
-
-    entities.authors.forEach( ( author ) => {
-      this.__nlp.addNamedEntityText( 'author', author.name, [ 'en' ], [ author.name, ...( author.aliases || [] ) ] );
-    } );
-
-    this.__nlp.addRegexEntity( 'tierRange', 'en', regexTierRange );
 
     // -- train ------------------------------------------------------------------------------------
     await this.__nlp.train();
@@ -45,7 +66,7 @@ module.exports.MBCRando = class {
 
   async interpret( message, id ) {
     const res = await this.__nlp.process( 'en', message );
-    return this.__processResult( res, id );
+    return await this.__processResult( res, id );
   }
 
   __pickASongFromList( list ) {
@@ -55,7 +76,7 @@ module.exports.MBCRando = class {
       : 'Sorry, I could not find such a song.';
   }
 
-  __processResult( res, id ) {
+  async __processResult( res, id ) {
     if (
       id != null &&
       res.intent !== Intent.Reroll &&
@@ -63,6 +84,8 @@ module.exports.MBCRando = class {
     ) {
       this.__lastRes[ id ] = res;
     }
+
+    const extracted = ( await this.__nlp.extractEntities( 'en', res.utterance ) ).entities;
 
     if ( res.intent === Intent.Greetings ) {
       return 'Hi';
@@ -97,52 +120,56 @@ try:
       return this.__pickASongFromList( entities.songs );
 
     } else if ( res.intent === Intent.PickASongFromSeries ) {
-      const seriesName = res.entities.find( ( ent ) => ent.entity === 'series' ).option;
+      const seriesName = extracted.find( ( ent ) => ent.entity === 'series' ).option;
       const series = entities.serieses.find( ( series ) => series.name === seriesName );
       const songs = entities.songs.filter( ( song ) => series.packs.includes( song.pack ) );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromPack ) {
-      const pack = res.entities.find( ( ent ) => ent.entity === 'pack' ).option;
+      const pack = extracted.find( ( ent ) => ent.entity === 'pack' ).option;
       const songs = entities.songs.filter( ( song ) => song.pack === pack );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromAuthor ) {
-      const author = res.entities.find( ( ent ) => ent.entity === 'author' ).option;
+      const author = extracted.find( ( ent ) => ent.entity === 'author' ).option;
       const songs = entities.songs.filter( ( song ) => (
         song.authors ? song.authors.includes( author ) : ( song.author === author )
       ) );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromTier ) {
-      const tier = res.entities.find( ( ent ) => ent.entity === 'number' ).resolution.value;
+      const tier = extractTierFromRegexTier(
+        extracted.find( ( ent ) => ent.entity === 'tier' ).utteranceText
+      );
       const songs = entities.songs.filter( ( song ) => song.tier === tier );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromPackTier ) {
-      const pack = res.entities.find( ( ent ) => ent.entity === 'pack' ).option;
-      const tier = parseFloat( res.entities.find( ( ent ) => ent.entity === 'number' ).utteranceText );
+      const pack = extracted.find( ( ent ) => ent.entity === 'pack' ).option;
+      const tier = parseFloat( extracted.find( ( ent ) => ent.entity === 'tier' ).utteranceText );
       const songs = entities.songs.filter( ( song ) => song.pack === pack && song.tier === tier );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromTierRange ) {
-      const tierRange = res.entities.find( ( ent ) => ent.entity === 'tierRange' ).utteranceText;
-      const match = tierRange.match( regexTierRange );
-      const tierFrom = parseFloat( match[ 1 ] );
-      const tierTo = parseFloat( match[ 5 ] );
+      const [ tierFrom, tierTo ] = extractTiersFromRegexTierRange(
+        extracted.find( ( ent ) => ent.entity === 'tierRange' ).utteranceText
+      );
       const songs = entities.songs.filter( ( song ) => (
         ( tierFrom <= song.tier ) && ( song.tier <= tierTo )
       ) );
-      console.log( res.entities );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromTierAbove ) {
-      const tier = res.entities.find( ( ent ) => ent.entity === 'number' ).resolution.value;
+      const tier = extractTierFromRegexTier(
+        extracted.find( ( ent ) => ent.entity === 'tier' ).utteranceText
+      );
       const songs = entities.songs.filter( ( song ) => song.tier >= tier );
       return this.__pickASongFromList( songs );
 
     } else if ( res.intent === Intent.PickASongFromTierBelow ) {
-      const tier = res.entities.find( ( ent ) => ent.entity === 'number' ).resolution.value;
+      const tier = extractTierFromRegexTier(
+        extracted.find( ( ent ) => ent.entity === 'tier' ).utteranceText
+      );
       const songs = entities.songs.filter( ( song ) => song.tier <= tier );
       return this.__pickASongFromList( songs );
 
