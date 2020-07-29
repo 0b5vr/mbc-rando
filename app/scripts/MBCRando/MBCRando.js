@@ -155,8 +155,8 @@ https://github.com/FMS-Cat/mbc-rando`;
         file: {
           attachment: (
             Math.random() < 0.00048828125
-             ? path.resolve( __dirname, '../../assets/k.mp4' )
-             : path.resolve( __dirname, '../../assets/h.mp4' )
+              ? path.resolve( __dirname, '../../assets/k.mp4' )
+              : path.resolve( __dirname, '../../assets/h.mp4' )
           ),
           name: 'h.mp4'
         }
