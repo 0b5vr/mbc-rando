@@ -42,11 +42,14 @@ module.exports.Bot = class {
     } );
   }
 
+  /**
+   * @param {Discord.Message} message
+   */
   async __handleMessage( message ) {
-    const mentioned = message.mentions.users.some( ( u ) => u.id === this.__client.user.id );
+    const mentioned = message.mentions.has( message.guild.member( this.__client.user ) );
     if ( !mentioned ) { return; }
 
-    const str = message.content.replace( /\s*<@!\d+?>\s*/m, '' );
+    const str = message.content.replace( /<@[!&]?\d+?>/m, '' );
     console.log( `<- ${ message.author.tag }: ${ str }` );
 
     let res;
