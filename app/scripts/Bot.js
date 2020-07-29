@@ -25,12 +25,12 @@ module.exports.Bot = class {
     this.__client.login( token );
   }
 
-  async destroy() {
+  destroy() {
     if ( this.__intervalID != null ) {
       clearInterval( this.__intervalID );
     }
 
-    await this.__client.destroy();
+    this.__client.destroy();
   }
 
   __setPresence() {
