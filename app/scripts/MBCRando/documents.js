@@ -28,9 +28,8 @@ module.exports.documents = [
   { utter: 'Choose a song', intent: Intent.PickASong },
   { utter: 'Select a song randomly', intent: Intent.PickASong },
 
-  { utter: 'Pick a song from entire MBC', intent: Intent.PickASongFromSeries },
+  { utter: 'Pick a song from entire MBC series', intent: Intent.PickASongFromSeries },
   { utter: 'Pick a song from MBC series', intent: Intent.PickASongFromSeries },
-  { utter: 'Pick a song from MBC franchise', intent: Intent.PickASongFromSeries },
 
   { utter: 'Tier 1', intent: Intent.PickASongFromTier },
   { utter: 'tier 2', intent: Intent.PickASongFromTier },

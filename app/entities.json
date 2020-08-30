@@ -1,13 +1,13 @@
 {
   "serieses": [
     {
-      "name": "Mods Boot Camp",
+      "name": "Mods Boot Camp Series",
       "packs": [
         "Mods Boot Camp",
         "Mods Boot Camp 2",
         "Mods Boot Camp 3"
       ],
-      "aliases": [ "MBC" ]
+      "aliases": [ "MBC Series" ]
     }
   ],
 
