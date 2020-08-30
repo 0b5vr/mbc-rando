@@ -475,7 +475,7 @@
       "pack": "Mods Boot Camp 3"
     },
     {
-      "name": "Dorpamine",
+      "name": "Dopamine",
       "artist": "U1 overground",
       "author": "TaroNuke",
       "tier": 3,
@@ -771,7 +771,8 @@
       "aliases": [ "Nick", "LoseDont", "LostDon't" ]
     },
     {
-      "name": "CondorTalon"
+      "name": "CondorTalon",
+      "aliases": [ "Condor" ]
     },
     {
       "name": "TaroNuke",
