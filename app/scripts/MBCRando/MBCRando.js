@@ -6,8 +6,8 @@ const { Intent } = require( './Intent' );
 const { pick } = require( '../pick' );
 const entities = require( '../../entities.json' );
 
-const regexTier = /tier\s*(\d+(.\d+)?)/;
-const regexTierRange = /tier\s*(\d+(.\d+)?)\s*(-|~|to)\s*(tier\s*)?(\d+(.\d+)?)/;
+const regexTier = /tier\s*(\d+(.\d+)?)/i;
+const regexTierRange = /tier\s*(\d+(.\d+)?)\s*(-|~|to)\s*(tier\s*)?(\d+(.\d+)?)/i;
 
 function extractTierFromRegexTier( text ) {
   const match = text.match( regexTier );
@@ -27,7 +27,7 @@ module.exports.MBCRando = class {
   }
 
   async init() {
-    const container = await containerBootstrap();
+    const container = containerBootstrap();
     container.use( Nlp );
 
     this.__nlp = container.get( 'nlp' );
@@ -37,19 +37,39 @@ module.exports.MBCRando = class {
 
     // -- entities ---------------------------------------------------------------------------------
     entities.serieses.forEach( ( series ) => {
-      this.__nlp.addNerRule( 'en', series.name, 'series', [ series.name, ...( series.aliases || [] ) ] );
+      this.__nlp.addNerRuleOptionTexts(
+        'en',
+        'series',
+        series.name,
+        [ series.name, ...( series.aliases || [] ) ]
+      );
     } );
 
     entities.packs.forEach( ( pack ) => {
-      this.__nlp.addNerRule( 'en', pack.name, 'pack', [ pack.name, ...( pack.aliases || [] ) ] );
+      this.__nlp.addNerRuleOptionTexts(
+        'en',
+        'pack',
+        pack.name,
+        [ pack.name, ...( pack.aliases || [] ) ]
+      );
     } );
 
     entities.songs.forEach( ( song ) => {
-      this.__nlp.addNerRule( 'en', song.name, 'song', [ song.name, ...( song.aliases || [] ) ] );
+      this.__nlp.addNerRuleOptionTexts(
+        'en',
+        'song',
+        song.name,
+        [ song.name, ...( song.aliases || [] ) ]
+      );
     } );
 
     entities.authors.forEach( ( author ) => {
-      this.__nlp.addNerRule( 'en', author.name, 'author', [ author.name, ...( author.aliases || [] ) ] );
+      this.__nlp.addNerRuleOptionTexts(
+        'en',
+        'author',
+        author.name,
+        [ author.name, ...( author.aliases || [] ) ]
+      );
     } );
 
     this.__nlp.addNerRegexRule( 'en', 'tier', regexTier );
