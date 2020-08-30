@@ -199,22 +199,22 @@ https://github.com/FMS-Cat/mbc-rando`;
 
     } else if ( res.intent === Intent.H ) {
       return {
-        file: {
+        files: [ {
           attachment: (
             Math.random() < 0.00048828125
               ? path.resolve( __dirname, '../../assets/k.mp4' )
               : path.resolve( __dirname, '../../assets/h.mp4' )
           ),
           name: 'h.mp4'
-        }
+        } ]
       };
 
     } else if ( res.intent === Intent.Jazz ) {
       return {
-        file: {
+        files: [ {
           attachment: path.resolve( __dirname, '../../assets/jazz.jpg' ),
           name: 'jazz.jpg'
-        }
+        } ]
       };
 
     } else {
