@@ -53,7 +53,9 @@ module.exports.documents = [
   { utter: 'Pick a song in the range of tier1-2', intent: Intent.PickASongFromTierRange },
   { utter: 'Pick a tier 3-tier 4 song', intent: Intent.PickASongFromTierRange },
 
+  { utter: 'MBC', intent: Intent.PickASongFromPack },
   { utter: 'MBC2', intent: Intent.PickASongFromPack },
+  { utter: 'MBC3', intent: Intent.PickASongFromPack },
   { utter: 'Pick a song from MBC', intent: Intent.PickASongFromPack }, // uhhhhhh
   { utter: 'Pick a song from Mods Boot Camp 3', intent: Intent.PickASongFromPack },
   { utter: 'Pick a song by MBC2', intent: Intent.PickASongFromPack },
@@ -67,6 +69,7 @@ module.exports.documents = [
   { utter: 'Pick a MBC3 Tier4', intent: Intent.PickASongFromPackTier },
 
   { utter: 'TaroNuke', intent: Intent.PickASongFromAuthor },
+  { utter: 'Condor', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song from WinDEU', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song by Hal', intent: Intent.PickASongFromAuthor },
   { utter: 'Pick a song by Taro', intent: Intent.PickASongFromAuthor },
