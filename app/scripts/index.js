@@ -5,7 +5,7 @@ const { Bot } = require( './Bot' );
   const mbcRando = new MBCRando();
   await mbcRando.init();
 
-  const bot = new Bot(  'NjYzNjM5Mzk2MzgxMDk3OTg2.XhLcgw.1CR2Y56Wzuz0RdYS3CuqJwLRaBI', mbcRando );
+  const bot = new Bot( process.env.MBCRANDO_DISCORD_TOKEN, mbcRando );
 
   process.on( 'SIGINT', () => {
     console.info( 'Exiting...' );
